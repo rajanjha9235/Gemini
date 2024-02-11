@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    background-color: hotpink;
+    position: relative;
+    overflow: hidden;
+}
+
+#display{
+    background-color: burlywood;
+    width: 800px;
+    margin: 5px 300px;
+    
+    /* To fix the height and make the slider when text is out of the block  */
+    height: 520px;
+    overflow-y: auto; 
+}
+
+.query-class{
+    margin: 20px 200px 10px 300px;
+    background-color: aquamarine;
+    width: 800px;
+}
+
+button{
+    cursor: pointer;
+}
