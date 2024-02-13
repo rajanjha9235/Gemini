@@ -8,7 +8,7 @@ h1{
     overflow: hidden;
 }
 
-#display{
+.display{
     background-color: burlywood;
     width: 800px;
     margin: 5px 300px;
@@ -16,6 +16,11 @@ h1{
     /* To fix the height and make the slider when text is out of the block  */
     height: 520px;
     overflow-y: auto; 
+}
+
+#display{
+    font-size: medium;
+    font-family: sans-serif;
 }
 
 .query-class{
