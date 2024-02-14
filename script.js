@@ -13,14 +13,14 @@ async function run(){
 
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
 
-  document.getElementById('display').innerHTML = 'Loading....';  // Show Loading.. While output is getting fetched
+  document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
   console.log(text);
 
-  document.getElementById("display").innerHTML = text;  // Display the content on display div
+  document.getElementById("display").append(text + '\n\n');  // Display the answer
 }
 
 // run();
