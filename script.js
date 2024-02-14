@@ -16,7 +16,8 @@ async function run(){
 
   document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
 
-  const result = await model.generateContent(prompt);
+  const result = await model.generateContentStream(prompt);  // Using Streaming for faster access
+
   const response = await result.response;
   const text = response.text();
   console.log(text);
