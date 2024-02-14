@@ -1,4 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js"; // Convert MarkDown to HTML
 
 const API_KEY = "AIzaSyAWqxUcGcTcpu8ioALrzuRuPy-UUqDnHg0";
 
@@ -20,7 +21,8 @@ async function run(){
   const text = response.text();
   console.log(text);
 
-  document.getElementById("display").append(text + '\n\n');  // Display the answer
+  const html = marked.parse(text);  // To convert the markdown 
+  document.getElementById("display").innerHTML += (html+'\n\n');  // Display the answer
 }
 
 // Added EventListener to the button
