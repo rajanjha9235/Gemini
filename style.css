@@ -10,11 +10,11 @@ h1{
 
 .display{
     background-color: burlywood;
-    width: 800px;
-    margin: 5px 300px;
+    width: 1200px;
+    margin: 5px 100px;
     
     /* To fix the height and make the slider when text is out of the block  */
-    height: 520px;
+    height: 550px;
     overflow-y: auto; 
 }
 
