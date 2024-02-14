@@ -36,6 +36,6 @@ const input = document.getElementById('query');
 input.addEventListener("keypress",(event)=>{
   if (event.key == "Enter"){
     event.preventDefault();  // Prevent the Default action
-    send_button.click();  // Send the control to the button
+    send_button.click();  // Send the control to the send-button
   }
 })
