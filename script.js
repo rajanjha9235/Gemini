@@ -23,8 +23,19 @@ async function run(){
   document.getElementById("display").append(text + '\n\n');  // Display the answer
 }
 
-// run();
+// Added EventListener to the button
+const send_button = document.getElementById('send-button');
+send_button.addEventListener("click",()=>{
+  document.getElementById('query').value = '';  // To clear the input
+  run();  // Run the function
+})
 
-document.getElementById("send-button").addEventListener('click', ()=>{
-  run();
+
+// Added EventListener --> When Press Enter it gets executed
+const input = document.getElementById('query');
+input.addEventListener("keypress",(event)=>{
+  if (event.key = "Enter"){
+    event.preventDefault();  // Prevent the Default action
+    send_button.click();  // Send the control to the button
+  }
 })
