@@ -15,8 +15,8 @@ h1{
     margin: 5px 100px;
     
     /* To fix the height and make the slider when text is out of the block  */
-    height: 550px;
-    overflow-y: auto; 
+    height: 550px;    
+    overflow-y: auto;
 }
 
 #display{

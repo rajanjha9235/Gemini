@@ -22,6 +22,7 @@ async function run_text() {
   for await (const chunk of result.stream) {  // For faster access
     const chunkText = chunk.text();
     console.log(chunkText);
+    
     text += chunkText;
   }
 
