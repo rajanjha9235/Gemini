@@ -22,12 +22,17 @@ async function run_text() {
   for await (const chunk of result.stream) {  // For faster access
     const chunkText = chunk.text();
     console.log(chunkText);
-    
     text += chunkText;
   }
 
   const html = marked.parse(text);  // To convert the markdown 
   document.getElementById("display").innerHTML += (html + '\n\n');  // Display the answer
+
+  hljs.highlightAll();  // To highlight the code blocks
+  const designs = document.querySelectorAll(".hljs");
+  designs.forEach(design =>{
+    design.style.display = "inline-block";  // To change the style of code block
+  })
 }
 
 
