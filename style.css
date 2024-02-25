@@ -22,6 +22,7 @@ h1{
 #display{
     font-size: medium;
     font-family: sans-serif;
+    white-space : pre-line;  /* To remove horizontal slider and wrap */
 }
 
 .query-class{
@@ -46,6 +47,6 @@ button{
     margin-left : 21px;  /* To show the unordered mullets */
 }
 
-pre code .hljs{
+pre code.hljs{
     border-radius : 21px;
 }
