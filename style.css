@@ -36,6 +36,9 @@ h1{
     /* To hide the default Browse...  */
     display: none;
 }
+.query-class label[for="upload-image"]:hover{
+    cursor : pointer;
+}
 
 button{
     cursor: pointer;
