@@ -15,11 +15,11 @@ h1{
 
 .display{
     background-color: #0b0b0b;
-    width: 1200px;
+    width: 85vw;
     margin: 5px 100px;
     
     /* To fix the height and make the slider when text is out of the block  */
-    height: 550px;    
+    height: 85vh;    
     overflow-y: auto;
 }
 
@@ -51,4 +51,19 @@ button{
 
 pre code.hljs{
     border-radius : 21px;
+}
+
+@media only screen and (min-width:300px) and (max-width:500px){
+    label[for="query"]{
+        display: none;
+    }
+    
+    .display{
+        margin: 5px 40px;
+    }
+
+    #query{
+        width: 60vw;
+        margin: 5px, 10px;
+    }
 }
