@@ -6,7 +6,9 @@ const API_KEY = "AIzaSyAWqxUcGcTcpu8ioALrzuRuPy-UUqDnHg0";
 // Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(API_KEY);
 
-// Foe the text-only input
+const display_div = document.querySelector('.display'); // div of Class display
+
+// For the text-only input
 async function run_text() {
 
   // For text-only input, use the gemini-pro model
@@ -15,6 +17,7 @@ async function run_text() {
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
 
   document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
+  display_div.scrollTop = display.scrollHeight;  // Scroll Down
 
   const result = await model.generateContentStream(prompt);  // Using Streaming for faster access
 
@@ -33,6 +36,9 @@ async function run_text() {
   designs.forEach(design =>{
     design.style.display = "inline-block";  // To change the style of code block
   })
+
+  display_div.scrollTop = display.scrollHeight;  // Scroll-down automatically
+
 }
 
 
@@ -56,7 +62,7 @@ async function run_image() {
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
 
   document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
-
+  display_div.scrollTop = display.scrollHeight;  // Scroll-down automatically
 
   const fileInputEl = document.querySelector("input[type=file]");  // To select the image
   const imageParts = await Promise.all(
@@ -74,6 +80,14 @@ async function run_image() {
 
   const html = marked.parse(text);  // To convert the markdown 
   document.getElementById("display").innerHTML += (html + '\n\n');  // Display the answer
+
+  hljs.highlightAll();  // To highlight the code blocks
+  const designs = document.querySelectorAll(".hljs");
+  designs.forEach(design =>{
+    design.style.display = "inline-block";  // To change the style of code block
+  })
+
+  display_div.scrollTop = display.scrollHeight;  // Scroll-down automatically
 }
 
 
