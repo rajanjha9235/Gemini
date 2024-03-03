@@ -1,5 +1,7 @@
 # Gemini
-Gemini AI - It's like as chatgpt but using Gemini AI by Google
+As All of you know that Google has launched **Gemini**.
+This project is using the Google-GenerativeAI for the response.
+By, Default the response that comes from the Gemini is in the markdown format and we converted it into HTML and displaying it in the div.
 
 - **Visit :-** https://rajanjha9235.github.io/Gemini to test this AI without any Login.
 ### Screenshots
