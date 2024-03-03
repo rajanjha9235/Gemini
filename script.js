@@ -17,7 +17,7 @@ async function run_text() {
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
 
   document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
-  display_div.scrollTop = display.scrollHeight;  // Scroll Down
+  display_div.scrollTop = display_div.scrollHeight;  // Scroll Down
 
   const result = await model.generateContentStream(prompt);  // Using Streaming for faster access
 
@@ -37,7 +37,7 @@ async function run_text() {
     design.style.display = "inline-block";  // To change the style of code block
   })
 
-  display_div.scrollTop = display.scrollHeight;  // Scroll-down automatically
+  display_div.scrollTop = display_div.scrollHeight;  // Scroll-down automatically
 
 }
 
@@ -62,7 +62,7 @@ async function run_image() {
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
 
   document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
-  display_div.scrollTop = display.scrollHeight;  // Scroll-down automatically
+  display_div.scrollTop = display_div.scrollHeight;  // Scroll-down automatically
 
   const fileInputEl = document.querySelector("input[type=file]");  // To select the image
   const imageParts = await Promise.all(
@@ -87,7 +87,7 @@ async function run_image() {
     design.style.display = "inline-block";  // To change the style of code block
   })
 
-  display_div.scrollTop = display.scrollHeight;  // Scroll-down automatically
+  display_div.scrollTop = display_div.scrollHeight;  // Scroll-down automatically
 }
 
 
