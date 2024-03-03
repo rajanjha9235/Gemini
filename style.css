@@ -17,9 +17,10 @@ h1{
     background-color: #0b0b0b;
     width: 85vw;
     margin: 5px 100px;
+    border-radius: 15px;
     
     /* To fix the height and make the slider when text is out of the block  */
-    height: 85vh;    
+    height: 82vh;    
     overflow-y: auto;
 }
 
@@ -30,11 +31,30 @@ h1{
     margin-left: 31px;
 }
 
-.query-class{
-    margin: 20px 100px 10px 100px;
-    /* background-color: aquamarine; */
-    width: 1100px;
+#display pre{
+    overflow-x: auto;  /*To make slider in the code blocks*/
 }
+
+.query-class{
+    margin: 10px 100px;
+    /* background-color: aquamarine; */
+    width: 83vw;
+    background-color: #0b0b0b;
+    padding: 1rem;
+    border-radius: 3rem;
+}
+#query{
+    background-color: #1e1e1e;
+    color: white;
+    font-size: medium;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 9px;
+}
+/* #query:focus{
+    outline: none;
+} */
 
 /* Input tag of upload image  */
 #upload-image{
@@ -51,19 +71,4 @@ button{
 
 pre code.hljs{
     border-radius : 21px;
-}
-
-@media only screen and (min-width:300px) and (max-width:500px){
-    label[for="query"]{
-        display: none;
-    }
-    
-    .display{
-        margin: 5px 40px;
-    }
-
-    #query{
-        width: 60vw;
-        margin: 5px, 10px;
-    }
 }
