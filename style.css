@@ -32,7 +32,7 @@ h1{
 }
 
 #display pre{
-    overflow-x: auto;  /*To make slider in the code blocks*/
+    overflow-x: auto;  /*To make slider in the code blocks in horizontal direction*/
 }
 
 .query-class{
@@ -61,14 +61,17 @@ h1{
     /* To hide the default Browse...  */
     display: none;
 }
-.query-class label[for="upload-image"]:hover{
+.query-class label:hover{
     cursor : pointer;
 }
 
 button{
     cursor: pointer;
+    display: none;
 }
 
+ /* To handle the code blocks  */
 pre code.hljs{
     border-radius : 21px;
+    display: inline-block !important;
 }

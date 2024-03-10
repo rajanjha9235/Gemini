@@ -15,27 +15,27 @@ async function run_text() {
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
+  
+  const display = document.getElementById("display");
+  display.append('Q. ' + prompt + '\n\n');  // To display the question
+  
 
-  document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
+  const div_loader = document.createElement("div"); // Loading Spinner
+  div_loader.classList.add("spinner");
+  display.appendChild(div_loader);
+  
   display_div.scrollTop = display_div.scrollHeight;  // Scroll Down
 
-  const result = await model.generateContentStream(prompt);  // Using Streaming for faster access
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
 
-  let text = '';
-  for await (const chunk of result.stream) {  // For faster access
-    const chunkText = chunk.text();
-    console.log(chunkText);
-    text += chunkText;
-  }
+  display.removeChild(div_loader); // Remove the loader
 
   const html = marked.parse(text);  // To convert the markdown 
-  document.getElementById("display").innerHTML += (html + '\n\n');  // Display the answer
+  display.innerHTML += (html + '\n\n');  // Display the answer
 
   hljs.highlightAll();  // To highlight the code blocks
-  const designs = document.querySelectorAll(".hljs");
-  designs.forEach(design =>{
-    design.style.display = "inline-block";  // To change the style of code block
-  })
 
   display_div.scrollTop = display_div.scrollHeight;  // Scroll-down automatically
 
@@ -61,7 +61,13 @@ async function run_image() {
 
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
 
-  document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
+  const display = document.getElementById("display");
+  display.append('Q. ' + prompt + '\n\n');  // To display the question
+
+  const div_loader = document.createElement("div"); // Loading Spinner
+  div_loader.classList.add("spinner");
+  display.appendChild(div_loader);
+  
   display_div.scrollTop = display_div.scrollHeight;  // Scroll-down automatically
 
   const fileInputEl = document.querySelector("input[type=file]");  // To select the image
@@ -69,23 +75,16 @@ async function run_image() {
     [...fileInputEl.files].map(fileToGenerativePart)
   );
 
-  const result = await model.generateContentStream([prompt, ...imageParts]); // Streaming for faster access
+  const result = await model.generateContent([prompt, ...imageParts]);
+  const response = await result.response;
+  const text = response.text();
 
-  let text = '';
-  for await (const chunk of result.stream) { // For the faster access
-    const chunkText = chunk.text();
-    console.log(chunkText);
-    text += chunkText;
-  }
+  display.removeChild(div_loader); // Remove the loader
 
   const html = marked.parse(text);  // To convert the markdown 
   document.getElementById("display").innerHTML += (html + '\n\n');  // Display the answer
 
   hljs.highlightAll();  // To highlight the code blocks
-  const designs = document.querySelectorAll(".hljs");
-  designs.forEach(design =>{
-    design.style.display = "inline-block";  // To change the style of code block
-  })
 
   display_div.scrollTop = display_div.scrollHeight;  // Scroll-down automatically
 }
