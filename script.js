@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js"; // Convert MarkDown to HTML
 
-const API_KEY = "AIzaSyCTGaGV__CTqVAbgSu6SFayCKxYXzfQlCE";
+const API_KEY = "AIzaSyCU17rMrPG79Tb_5BXzwRIkPwynrNa39Co";
 
 // Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(API_KEY);
