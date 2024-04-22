@@ -6,11 +6,19 @@ body{
     background-color: rgb(0, 0, 0);
     color: white;
 }
-h1{
-    background-color: hotpink;
+header{
     display: flex;
+    background-color: #424b4d;
+}
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 1%;
+}
+#h1{
+    margin-left: 35%;
     justify-content: center;
-    align-items: center;
 }
 
 .display{
